@@ -75,7 +75,7 @@ tr -d '\r' < "$CSV" > "$tmp_csv"
 # 5. remove the header row.
 # 6. print matches to the screen and save them to a temp file for counting.
 csvcut -t -c ingredients_text,product_name,code "$tmp_csv" | \
-  csvgrep -t -c ingredients_text -r "(?i)${INGREDIENT}" | \
+  csvgrep -c ingredients_text -r "(?i)${INGREDIENT}" | \
   csvcut -c product_name,code | \
   csvformat -T | \
   tail -n +2 | \
