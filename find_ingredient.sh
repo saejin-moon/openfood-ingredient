@@ -87,3 +87,5 @@ count=$(wc -l < "$tmp_matches" | tr -d ' ')
 # print the final summary line.
 echo ""
 echo "found ${count} product(s) containing: \"${INGREDIENT}\""
+
+rm -f "$tmp_csv" "$tmp_matches"
